@@ -1,0 +1,22 @@
+\section{Infraestrutura computacional}
+
+\begin{frame}{As camadas de uma infraestrutura computacional}
+  \centering
+  \begin{tikzpicture}[
+    layer/.style={draw,rounded corners,minimum width=8.5cm,minimum height=0.62cm,align=center},
+    flow/.style={-{Latex[length=2mm]},thick}
+  ]
+    \node[layer,fill=blue!8] (users) {Usuários, serviços e aplicações};
+    \node[layer,fill=blue!12,below=3mm of users] (runtime) {Bibliotecas, runtimes e sistemas operacionais};
+    \node[layer,fill=blue!16,below=3mm of runtime] (infra) {Computação, armazenamento e virtualização};
+    \node[layer,fill=blue!20,below=3mm of infra] (network) {Redes, conectividade e identidade};
+    \node[layer,fill=blue!24,below=3mm of network] (physical) {Hardware, firmware e instalações};
+    \draw[flow] (users) -- (runtime);
+    \draw[flow] (runtime) -- (infra);
+    \draw[flow] (infra) -- (network);
+    \draw[flow] (network) -- (physical);
+  \end{tikzpicture}
+  \vspace{0.5em}
+  \small\placeholder{Modelo analítico inicial; adaptar ao caso e às fontes escolhidas.}
+  \note{A separação em camadas ajuda a localizar dependências, mas as relações reais são muitas vezes horizontais e circulares. O desenho não representa uma pilha universal.}
+\end{frame}

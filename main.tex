@@ -1,0 +1,93 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+% Idioma e codificação: compatíveis com pdfLaTeX.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{csquotes}
+
+% Matemática, figuras, tabelas e diagramas.
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric}
+
+% Bibliografia: BibLaTeX + Biber (não BibTeX).
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,
+  giveninits=true,
+  uniquename=init,
+  maxcitenames=2,
+  maxbibnames=99,
+  doi=true,
+  url=true,
+  isbn=false
+]{biblatex}
+\addbibresource{references.bib}
+
+% Tema inicial deliberadamente simples; personalize após aprovar a narrativa.
+\usetheme{Madrid}
+\usecolortheme{dolphin}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamersize{text margin left=8mm,text margin right=8mm}
+
+% Metadados: substitua os campos antes da apresentação.
+\title[Soberania digital e computação]{Soberania digital e computação}
+\subtitle{Dependências, capacidades e autonomia tecnológica}
+\author{[Nome do apresentador]}
+\institute{[Instituição]}
+\date{[Evento]\par [Data]}
+
+% Links discretos; o próprio Beamer já carrega hyperref.
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Soberania digital e computação},
+  pdfauthor={[Nome do apresentador]}
+}
+
+% Indique a duração estimada e a função do slide nas notas.
+\newcommand{\slidepurpose}[1]{\note{\textbf{Função narrativa:} #1}}
+\newcommand{\placeholder}[1]{\textit{\color{gray}#1}}
+
+% Para gerar notas em páginas separadas, substitua hide notes por show notes.
+\setbeameroption{hide notes}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+  \note{Apresente a pergunta que orienta a palestra. Não antecipe toda a conclusão.}
+\end{frame}
+
+\input{sections/01-problema}
+\input{sections/02-conceitos}
+\input{sections/03-camadas}
+\input{sections/04-dependencias}
+\input{sections/05-capacidades}
+\input{sections/06-alternativas}
+\input{sections/07-sintese}
+
+\begin{frame}[allowframebreaks]{Referências}
+  \small
+  \printbibliography[heading=none]
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  {\LARGE Obrigado!}\par\vspace{1em}
+  {\large Perguntas e discussão}\par\vspace{2em}
+  \placeholder{[Nome, instituição e contato]}
+\end{frame}
+
+\end{document}
